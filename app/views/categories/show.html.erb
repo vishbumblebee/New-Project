@@ -1,0 +1,9 @@
+<h1><%= @category.category_name%></h1>
+<h1><%= @category.description%></h1>
+<div class="btn-group" role="group" aria-label="Basic example">
+	<%= link_to "Add Item" ,new_item_path, class:"btn btn-outline-dark"%>
+	<%= link_to "All Items", items_path, class:"btn btn-outline-dark" %>
+	<%= link_to "Edit", edit_category_path(@category), class:"btn btn-outline-dark" %>
+	<%= link_to "Destroy", category_path(@category), data:{turbo_method: :delete, turbo_confirm: "Are You Sure?"}, class:"btn btn-outline-dark"%>
+</div>
+

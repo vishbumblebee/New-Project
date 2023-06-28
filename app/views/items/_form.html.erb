@@ -1,0 +1,45 @@
+<h1>Item</h1>
+
+	<%= form_with model: item do |form|%>
+	<div>
+		<%= form.label :category%><br>
+		<%= form.collection_select :category_id, Category.order(:name),:id,:category_name, include_blank: true %>
+		<% item.errors.full_messages_for(:category).each do |message|%>
+		<div> <%= message%></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :item_name%><br>
+		<%= form.text_field :item_name %>
+		<% item.errors.full_messages_for(:item_name).each do |message|%>
+		<div> <%= message%></div>
+		<% end %>
+	</div>
+
+	<div>
+		<%= form.label :serial_number %><br>
+		<%= form.text_field :serial_number %>
+		<% item.errors.full_messages_for(:serial_number).each do |message|%>
+		<div> <%= meassage%></div>
+		<% end %>	
+	</div>
+	<div>
+		<%= form.label :dimension %><br>
+		<%= form.text_field :dimension %>
+		<% item.errors.full_messages_for(:dimension).each do |message|%>
+		<div> <%= meassage%></div>
+		<% end %>	
+	</div>
+	<div>
+		<%= form.label :grade %><br>
+		<%= form.select(:grade, [['A'],['B'],['C'],['D']], include_blank: "Select") %>
+		<% item.errors.full_messages_for(:grade).each do |message|%>
+		<div> <%= meassage%></div>
+		<% end %>	
+	</div>
+
+	<div>
+		<%= form.submit %>
+	<%#= render "form", categories: @categories%>
+	</div>
+	<% end %>

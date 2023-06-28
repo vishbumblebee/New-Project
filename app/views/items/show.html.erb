@@ -1,0 +1,14 @@
+<h1>Items#show</h1>
+<p>this page view Items</p>
+<ul>
+	<li><%= @item.serial_number%></li>
+	<li><%= @item.item_name%></li>
+	<li><%= @item.dimension%></li>
+	<li><%= @item.grade%></li>
+</ul>
+
+<div>
+	<%= link_to "Back", items_path %>
+	<%= link_to "Edit", edit_item_path %>
+	<%= link_to "Delete", item_path(@item.id), data: {turbo_method: :delete, turbo_confirm: :"Are you sure??"} %>
+</div>
